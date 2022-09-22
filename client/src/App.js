@@ -25,6 +25,7 @@ function App() {
         return (<div key={entry.sys.id}>
           <h2>{entry.fields.recipeTitle}</h2>
           <p>{entry.fields.recipeIntroduction}</p>
+          <img src={entry.fields.recipeImage.sys.url} alt="burger"/>
 
           <div className='text'>
             {entry.fields.instructions.content.map((content) => {
