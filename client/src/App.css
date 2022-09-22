@@ -1,0 +1,128 @@
+body {
+  background: radial-gradient(circle, rgba(201, 252, 255, 1) 0%, rgba(255, 220, 238, 1) 100%);
+}
+.wrapper_inner {
+  text-align: center;
+  background-color: #74054e;
+}
+.wrapper_span {
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px #969696;
+  font-family: 'Niconne', cursive;
+  font-size: 50px;
+  
+}
+.recipetitle_main {
+  text-align: center;
+}
+.recipetitle_main h2 {
+  font-size: 40px;
+  text-shadow: 5px 5px 4px #bab6b6;
+}
+
+.recipetitle_main p {
+  font-size: 22px;
+  font-weight: 700;
+}
+img {
+  width: 450px;
+  max-width: 100%;
+  border: 10px solid white;
+  box-shadow: rgb(0 0 0 / 25%) 0px 25px 50px -12px;
+}
+.post {
+  width: 1200px;
+  margin: 0 auto;
+  /* text-align: center; */
+}
+.main_img_part {
+  display: flex;
+  justify-content: space-between;
+}
+.text {
+  width: 700px;
+  font-size: 19px;
+  margin-top: 10px;
+}
+.text p {
+  margin-top: 0;
+  margin-bottom: 16px;
+
+}
+.flex {
+  display: flex;
+  /* position: relative; */
+  font-size: 20px;
+  /*border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;*/
+  box-shadow:10px 5px 5px  rgb(230, 170, 216);
+  border-radius: 5px;
+}
+.flex:last-child {
+  border-bottom: 1px solid #000000;
+}
+.flex:first-child {
+  font-size: 25px;
+  background-color: #74054e;
+  color: white;
+}
+.flex p {
+  font-weight: 900;
+  width: 50%;
+  /* border-left: 1px solid black; */
+}
+/* .flex p:first-child::after {
+  content: "!";
+  background-color: #41ff4d;
+ width: 1px;
+ height: 10px;
+ position: absolute;
+} */
+.font{
+  padding-left: 20px;
+  position: relative;
+}
+/* .font:first-child::after{
+  content: '';
+width: 5px;
+height: 20px;
+position: absolute;
+background-color: black;
+} */
+.footer{
+  
+  margin-top: 1rem;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.social{
+  height:2rem;
+  background-color: #d561ac;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social li{
+  list-style: none;
+  margin-left: 1rem;
+  margin-right:1rem;
+}
+.intro{
+    background-color: whitesmoke;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    padding-left: 3rem;
+    column-gap: 1rem;
+}
+.signUp-btn{
+  background-color: #f08fce;
+  border-radius:20px;
+}
+.signUp-text{
+  border-style: dotted;
+  border-color: #f08fce;
+  border-radius: 5px;
+}
