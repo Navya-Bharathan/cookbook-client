@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import './App.css';
+import Footer from "./components/Footer";
 
 function App() {
   // const [assets, setAssets] = useState([]);
@@ -19,45 +20,48 @@ function App() {
   }, []);
   return (
     <div className="App">
-      {entries.map((entry, index) => {
-        console.log(index)
+      
+{
+    entries.map((entry, index) => {
+    console.log(index)
 
-        return (<div key={entry.sys.id}>
-          <h2>{entry.fields.recipeTitle}</h2>
-          <p>{entry.fields.recipeIntroduction}</p>
-          <img src={entry.fields.recipeImage.sys.url} alt="burger"/>
+    return (<div key={entry.sys.id}>
+      <h2>{entry.fields.recipeTitle}</h2>
+      <p>{entry.fields.recipeIntroduction}</p>
+      <img src={entry.fields.recipeImage.sys.url} alt="burger"/>
 
-          <div className='text'>
-            {entry.fields.instructions.content.map((content) => {
-              if (content.nodeType === "paragraph") {
-                // return <p>{content.content[0].value}</p>;
-                return content.content.map((element) => {
-                  return <p> {element.value}</p>
-                });
-              }
+      <div className='text'>
+        {entry.fields.instructions.content.map((content) => {
+          if (content.nodeType === "paragraph") {
+            // return <p>{content.content[0].value}</p>;
+            return content.content.map((element) => {
+              return <p> {element.value}</p>
+            });
+          }
+        })}
+      </div>
+
+      <div className="">
+            {entry.fields.ingredients.content.map((content) => {
+                if (content.nodeType === "table") {
+                    return content.content.map((row) => {
+                        return (
+                            <div className='flex'>
+                                {row.content.map((col) => {
+                                    /*console.log(col);*/
+                                    return <p className='font'> {col.content[0].content[0].value}</p>;
+                                })}
+                            </div>
+                        );
+                    });
+                }
             })}
-          </div>
 
-          <div className="">
-                {entry.fields.ingredients.content.map((content) => {
-                    if (content.nodeType === "table") {
-                        return content.content.map((row) => {
-                            return (
-                                <div className='flex'>
-                                    {row.content.map((col) => {
-                                        /*console.log(col);*/
-                                        return <p className='font'> {col.content[0].content[0].value}</p>;
-                                    })}
-                                </div>
-                            );
-                        });
-                    }
-                })}
-
-            </div>
-
-        </div>);
-      })}
+        </div>
+    
+    </div>);
+  })}
+      <Footer />
     </div>
   );
 }
